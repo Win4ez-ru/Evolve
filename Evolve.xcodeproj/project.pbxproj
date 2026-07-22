@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		000000000000000000000200 /* EvolveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000100 /* EvolveApp.swift */; };
+		000000000000000000000201 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000101 /* AppEnvironment.swift */; };
+		000000000000000000000202 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000102 /* AppRootView.swift */; };
+		000000000000000000000203 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000103 /* AppTab.swift */; };
+		000000000000000000000204 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000104 /* AppColor.swift */; };
+		000000000000000000000205 /* AppMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000105 /* AppMetrics.swift */; };
+		000000000000000000000206 /* AppTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000106 /* AppTypography.swift */; };
+		000000000000000000000207 /* FoundationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000107 /* FoundationCard.swift */; };
+		000000000000000000000208 /* FeaturePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000108 /* FeaturePlaceholderView.swift */; };
+		000000000000000000000209 /* AppInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000109 /* AppInstallation.swift */; };
+		00000000000000000000020A /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000010A /* PersistenceController.swift */; };
+		00000000000000000000020B /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000010B /* TodayView.swift */; };
+		00000000000000000000020C /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000010C /* LibraryView.swift */; };
+		00000000000000000000020D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000010D /* ProgressView.swift */; };
+		00000000000000000000020E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000010E /* ProfileView.swift */; };
+		00000000000000000000020F /* PreviewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000010F /* PreviewSupport.swift */; };
+		000000000000000000000211 /* AppEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000113 /* AppEnvironmentTests.swift */; };
+		000000000000000000000212 /* PersistenceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000114 /* PersistenceControllerTests.swift */; };
+		000000000000000000000213 /* AppSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000115 /* AppSmokeTests.swift */; };
+		000000000000000000000214 /* ContentDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000118 /* ContentDomain.swift */; };
+		000000000000000000000215 /* ContentValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000119 /* ContentValidation.swift */; };
+		000000000000000000000216 /* ContentLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000011A /* ContentLifecycle.swift */; };
+		000000000000000000000217 /* MVPContentFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000011B /* MVPContentFixtures.swift */; };
+		000000000000000000000218 /* ContentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000011C /* ContentModels.swift */; };
+		000000000000000000000219 /* ContentValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000011D /* ContentValidationTests.swift */; };
+		00000000000000000000021A /* ContentLifecycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000011E /* ContentLifecycleTests.swift */; };
+		00000000000000000000021B /* ContentPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000011F /* ContentPersistenceTests.swift */; };
+		00000000000000000000021C /* ContentCatalogSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000122 /* ContentCatalogSource.swift */; };
+		00000000000000000000021D /* ContentCatalogDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000123 /* ContentCatalogDecoder.swift */; };
+		00000000000000000000021E /* ContentCatalogInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000124 /* ContentCatalogInstaller.swift */; };
+		00000000000000000000021F /* ContentCatalog.v1.json in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000121 /* ContentCatalog.v1.json */; };
+		000000000000000000000220 /* ContentCatalogDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000126 /* ContentCatalogDecodingTests.swift */; };
+		000000000000000000000221 /* ContentCatalogInstallationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000127 /* ContentCatalogInstallationTests.swift */; };
+		000000000000000000000222 /* PrimaryActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000128 /* PrimaryActionButtonStyle.swift */; };
+		000000000000000000000223 /* LearningSessionPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000129 /* LearningSessionPlan.swift */; };
+		000000000000000000000224 /* SessionProgressHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000012A /* SessionProgressHeader.swift */; };
+		000000000000000000000225 /* LearningCardShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000012B /* LearningCardShell.swift */; };
+		000000000000000000000226 /* SessionStopStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000012C /* SessionStopStateView.swift */; };
+		000000000000000000000227 /* LearningSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000012D /* LearningSessionView.swift */; };
+		000000000000000000000228 /* LearningSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000012E /* LearningSessionTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		000000000000000000000100 /* EvolveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolveApp.swift; sourceTree = "<group>"; };
+		000000000000000000000101 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		000000000000000000000102 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
+		000000000000000000000103 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		000000000000000000000104 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		000000000000000000000105 /* AppMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMetrics.swift; sourceTree = "<group>"; };
+		000000000000000000000106 /* AppTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTypography.swift; sourceTree = "<group>"; };
+		000000000000000000000107 /* FoundationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationCard.swift; sourceTree = "<group>"; };
+		000000000000000000000108 /* FeaturePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePlaceholderView.swift; sourceTree = "<group>"; };
+		000000000000000000000109 /* AppInstallation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInstallation.swift; sourceTree = "<group>"; };
+		00000000000000000000010A /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		00000000000000000000010B /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		00000000000000000000010C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		00000000000000000000010D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		00000000000000000000010E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		00000000000000000000010F /* PreviewSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewSupport.swift; sourceTree = "<group>"; };
+		000000000000000000000110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		000000000000000000000111 /* Evolve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Evolve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000112 /* EvolveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvolveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000113 /* AppEnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentTests.swift; sourceTree = "<group>"; };
+		000000000000000000000114 /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceControllerTests.swift; sourceTree = "<group>"; };
+		000000000000000000000115 /* AppSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSmokeTests.swift; sourceTree = "<group>"; };
+		000000000000000000000116 /* Architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Architecture.md; sourceTree = "<group>"; };
+		000000000000000000000117 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		000000000000000000000118 /* ContentDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDomain.swift; sourceTree = "<group>"; };
+		000000000000000000000119 /* ContentValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentValidation.swift; sourceTree = "<group>"; };
+		00000000000000000000011A /* ContentLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLifecycle.swift; sourceTree = "<group>"; };
+		00000000000000000000011B /* MVPContentFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPContentFixtures.swift; sourceTree = "<group>"; };
+		00000000000000000000011C /* ContentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModels.swift; sourceTree = "<group>"; };
+		00000000000000000000011D /* ContentValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentValidationTests.swift; sourceTree = "<group>"; };
+		00000000000000000000011E /* ContentLifecycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLifecycleTests.swift; sourceTree = "<group>"; };
+		00000000000000000000011F /* ContentPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPersistenceTests.swift; sourceTree = "<group>"; };
+		000000000000000000000120 /* DomainModel.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DomainModel.md; sourceTree = "<group>"; };
+		000000000000000000000121 /* ContentCatalog.v1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ContentCatalog.v1.json; sourceTree = "<group>"; };
+		000000000000000000000122 /* ContentCatalogSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCatalogSource.swift; sourceTree = "<group>"; };
+		000000000000000000000123 /* ContentCatalogDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCatalogDecoder.swift; sourceTree = "<group>"; };
+		000000000000000000000124 /* ContentCatalogInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCatalogInstaller.swift; sourceTree = "<group>"; };
+		000000000000000000000125 /* SeedCatalog.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SeedCatalog.md; sourceTree = "<group>"; };
+		000000000000000000000126 /* ContentCatalogDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCatalogDecodingTests.swift; sourceTree = "<group>"; };
+		000000000000000000000127 /* ContentCatalogInstallationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCatalogInstallationTests.swift; sourceTree = "<group>"; };
+		000000000000000000000128 /* PrimaryActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryActionButtonStyle.swift; sourceTree = "<group>"; };
+		000000000000000000000129 /* LearningSessionPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSessionPlan.swift; sourceTree = "<group>"; };
+		00000000000000000000012A /* SessionProgressHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProgressHeader.swift; sourceTree = "<group>"; };
+		00000000000000000000012B /* LearningCardShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCardShell.swift; sourceTree = "<group>"; };
+		00000000000000000000012C /* SessionStopStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStopStateView.swift; sourceTree = "<group>"; };
+		00000000000000000000012D /* LearningSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSessionView.swift; sourceTree = "<group>"; };
+		00000000000000000000012E /* LearningSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningSessionTests.swift; sourceTree = "<group>"; };
+		00000000000000000000012F /* DesignSystemAndSession.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DesignSystemAndSession.md; sourceTree = "<group>"; };
+		000000000000000000000130 /* FigmaStage5State.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FigmaStage5State.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		000000000000000000000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000020 /* Evolve */,
+				000000000000000000000021 /* EvolveTests */,
+				000000000000000000000022 /* Docs */,
+				000000000000000000000117 /* README.md */,
+				000000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		000000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000111 /* Evolve.app */,
+				000000000000000000000112 /* EvolveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		000000000000000000000020 /* Evolve */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000023 /* App */,
+				000000000000000000000024 /* Core */,
+				000000000000000000000025 /* Features */,
+				000000000000000000000026 /* PreviewSupport */,
+				000000000000000000000027 /* Resources */,
+			);
+			path = Evolve;
+			sourceTree = "<group>";
+		};
+		000000000000000000000021 /* EvolveTests */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000113 /* AppEnvironmentTests.swift */,
+				000000000000000000000114 /* PersistenceControllerTests.swift */,
+				000000000000000000000115 /* AppSmokeTests.swift */,
+				00000000000000000000011D /* ContentValidationTests.swift */,
+				00000000000000000000011E /* ContentLifecycleTests.swift */,
+				00000000000000000000011F /* ContentPersistenceTests.swift */,
+				000000000000000000000126 /* ContentCatalogDecodingTests.swift */,
+				000000000000000000000127 /* ContentCatalogInstallationTests.swift */,
+				00000000000000000000012E /* LearningSessionTests.swift */,
+			);
+			path = EvolveTests;
+			sourceTree = "<group>";
+		};
+		000000000000000000000022 /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000116 /* Architecture.md */,
+				000000000000000000000120 /* DomainModel.md */,
+				000000000000000000000125 /* SeedCatalog.md */,
+				00000000000000000000012F /* DesignSystemAndSession.md */,
+				000000000000000000000130 /* FigmaStage5State.json */,
+			);
+			path = Docs;
+			sourceTree = "<group>";
+		};
+		000000000000000000000023 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000100 /* EvolveApp.swift */,
+				000000000000000000000101 /* AppEnvironment.swift */,
+				000000000000000000000102 /* AppRootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		000000000000000000000024 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000030 /* Domain */,
+				000000000000000000000034 /* Catalog */,
+				000000000000000000000028 /* DesignSystem */,
+				00000000000000000000002A /* Navigation */,
+				00000000000000000000002B /* Persistence */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		000000000000000000000025 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000002C /* Today */,
+				000000000000000000000035 /* Session */,
+				00000000000000000000002D /* Library */,
+				00000000000000000000002E /* Progress */,
+				00000000000000000000002F /* Profile */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		000000000000000000000026 /* PreviewSupport */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000010F /* PreviewSupport.swift */,
+			);
+			path = PreviewSupport;
+			sourceTree = "<group>";
+		};
+		000000000000000000000027 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000110 /* Assets.xcassets */,
+				000000000000000000000033 /* Seed */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		000000000000000000000028 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000104 /* AppColor.swift */,
+				000000000000000000000105 /* AppMetrics.swift */,
+				000000000000000000000106 /* AppTypography.swift */,
+				000000000000000000000029 /* Components */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		000000000000000000000029 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000107 /* FoundationCard.swift */,
+				000000000000000000000108 /* FeaturePlaceholderView.swift */,
+				000000000000000000000128 /* PrimaryActionButtonStyle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		00000000000000000000002A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000103 /* AppTab.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		00000000000000000000002B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000109 /* AppInstallation.swift */,
+				00000000000000000000010A /* PersistenceController.swift */,
+				00000000000000000000011C /* ContentModels.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		000000000000000000000030 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000118 /* ContentDomain.swift */,
+				000000000000000000000119 /* ContentValidation.swift */,
+				00000000000000000000011A /* ContentLifecycle.swift */,
+				000000000000000000000032 /* Fixtures */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		000000000000000000000032 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000011B /* MVPContentFixtures.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		000000000000000000000033 /* Seed */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000121 /* ContentCatalog.v1.json */,
+			);
+			path = Seed;
+			sourceTree = "<group>";
+		};
+		000000000000000000000034 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000122 /* ContentCatalogSource.swift */,
+				000000000000000000000123 /* ContentCatalogDecoder.swift */,
+				000000000000000000000124 /* ContentCatalogInstaller.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		00000000000000000000002C /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000010B /* TodayView.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		000000000000000000000035 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000129 /* LearningSessionPlan.swift */,
+				00000000000000000000012A /* SessionProgressHeader.swift */,
+				00000000000000000000012B /* LearningCardShell.swift */,
+				00000000000000000000012C /* SessionStopStateView.swift */,
+				00000000000000000000012D /* LearningSessionView.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		00000000000000000000002D /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000010C /* LibraryView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		00000000000000000000002E /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000010D /* ProgressView.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		00000000000000000000002F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000010E /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000000000000000000000009 /* Evolve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00000000000000000000000C /* Build configuration list for PBXNativeTarget "Evolve" */;
+			buildPhases = (
+				000000000000000000000004 /* Sources */,
+				000000000000000000000006 /* Frameworks */,
+				000000000000000000000005 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Evolve;
+			productName = Evolve;
+			productReference = 000000000000000000000111 /* Evolve.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00000000000000000000000A /* EvolveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00000000000000000000000D /* Build configuration list for PBXNativeTarget "EvolveTests" */;
+			buildPhases = (
+				000000000000000000000007 /* Sources */,
+				000000000000000000000008 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000000000000000000000302 /* PBXTargetDependency */,
+			);
+			name = EvolveTests;
+			productName = EvolveTests;
+			productReference = 000000000000000000000112 /* EvolveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		000000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					000000000000000000000009 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					00000000000000000000000A = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 000000000000000000000009;
+					};
+				};
+			};
+			buildConfigurationList = 00000000000000000000000B /* Build configuration list for PBXProject "Evolve" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 000000000000000000000002;
+			productRefGroup = 000000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				000000000000000000000009 /* Evolve */,
+				00000000000000000000000A /* EvolveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		000000000000000000000005 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00000000000000000000021F /* ContentCatalog.v1.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		000000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000000000000000000000200 /* EvolveApp.swift in Sources */,
+				000000000000000000000201 /* AppEnvironment.swift in Sources */,
+				000000000000000000000202 /* AppRootView.swift in Sources */,
+				000000000000000000000203 /* AppTab.swift in Sources */,
+				000000000000000000000204 /* AppColor.swift in Sources */,
+				000000000000000000000205 /* AppMetrics.swift in Sources */,
+				000000000000000000000206 /* AppTypography.swift in Sources */,
+				000000000000000000000207 /* FoundationCard.swift in Sources */,
+				000000000000000000000208 /* FeaturePlaceholderView.swift in Sources */,
+				000000000000000000000209 /* AppInstallation.swift in Sources */,
+				00000000000000000000020A /* PersistenceController.swift in Sources */,
+				00000000000000000000020B /* TodayView.swift in Sources */,
+				00000000000000000000020C /* LibraryView.swift in Sources */,
+				00000000000000000000020D /* ProgressView.swift in Sources */,
+				00000000000000000000020E /* ProfileView.swift in Sources */,
+				00000000000000000000020F /* PreviewSupport.swift in Sources */,
+				000000000000000000000214 /* ContentDomain.swift in Sources */,
+				000000000000000000000215 /* ContentValidation.swift in Sources */,
+				000000000000000000000216 /* ContentLifecycle.swift in Sources */,
+				000000000000000000000217 /* MVPContentFixtures.swift in Sources */,
+				000000000000000000000218 /* ContentModels.swift in Sources */,
+				00000000000000000000021C /* ContentCatalogSource.swift in Sources */,
+				00000000000000000000021D /* ContentCatalogDecoder.swift in Sources */,
+				00000000000000000000021E /* ContentCatalogInstaller.swift in Sources */,
+				000000000000000000000222 /* PrimaryActionButtonStyle.swift in Sources */,
+				000000000000000000000223 /* LearningSessionPlan.swift in Sources */,
+				000000000000000000000224 /* SessionProgressHeader.swift in Sources */,
+				000000000000000000000225 /* LearningCardShell.swift in Sources */,
+				000000000000000000000226 /* SessionStopStateView.swift in Sources */,
+				000000000000000000000227 /* LearningSessionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000000000000000000000211 /* AppEnvironmentTests.swift in Sources */,
+				000000000000000000000212 /* PersistenceControllerTests.swift in Sources */,
+				000000000000000000000213 /* AppSmokeTests.swift in Sources */,
+				000000000000000000000219 /* ContentValidationTests.swift in Sources */,
+				00000000000000000000021A /* ContentLifecycleTests.swift in Sources */,
+				00000000000000000000021B /* ContentPersistenceTests.swift in Sources */,
+				000000000000000000000220 /* ContentCatalogDecodingTests.swift in Sources */,
+				000000000000000000000221 /* ContentCatalogInstallationTests.swift in Sources */,
+				000000000000000000000228 /* LearningSessionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		000000000000000000000301 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000000000000000000009;
+			remoteInfo = Evolve;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		000000000000000000000302 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000000000000000000000009 /* Evolve */;
+			targetProxy = 000000000000000000000301 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00000000000000000000000E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00000000000000000000000F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		000000000000000000000010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Evolve;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		000000000000000000000011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Evolve;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		000000000000000000000012 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Evolve.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Evolve";
+			};
+			name = Debug;
+		};
+		000000000000000000000013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evolve.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Evolve.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Evolve";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00000000000000000000000B /* Build configuration list for PBXProject "Evolve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00000000000000000000000E /* Debug */,
+				00000000000000000000000F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00000000000000000000000C /* Build configuration list for PBXNativeTarget "Evolve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000010 /* Debug */,
+				000000000000000000000011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00000000000000000000000D /* Build configuration list for PBXNativeTarget "EvolveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000012 /* Debug */,
+				000000000000000000000013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 000000000000000000000001 /* Project object */;
+}

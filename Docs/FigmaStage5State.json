@@ -1,0 +1,45 @@
+{
+  "runId": "evolve-stage5-2026-07-22",
+  "fileKey": "2No881agwAOyT3Hx7UR6Pv",
+  "fileUrl": "https://www.figma.com/design/2No881agwAOyT3Hx7UR6Pv",
+  "phase": "phase1_blocked_rate_limit",
+  "step": "text-styles",
+  "entities": {
+    "collections": {
+      "primitives": "VariableCollectionId:3:2",
+      "semanticLight": "VariableCollectionId:3:3",
+      "semanticDark": "VariableCollectionId:3:4",
+      "metrics": "VariableCollectionId:3:5",
+      "motion": "VariableCollectionId:3:6"
+    },
+    "variables": {
+      "range": "VariableID:4:2...VariableID:4:52",
+      "total": 51,
+      "primitiveColors": 16,
+      "semanticLightAliases": 10,
+      "semanticDarkAliases": 10,
+      "spacing": 7,
+      "radii": 4,
+      "motionDurations": 4
+    },
+    "styles": {},
+    "pages": {},
+    "components": {},
+    "screens": {}
+  },
+  "pendingValidations": [
+    "Create SF Pro text styles",
+    "Create elevation effect style",
+    "Build documented foundations page",
+    "Build reusable session components",
+    "Build Stage 5 session screen and verify screenshots"
+  ],
+  "blocker": "Figma MCP Starter plan call limit reached while creating text styles",
+  "completedSteps": [
+    "phase0",
+    "phase1-collections",
+    "phase1-color-variables",
+    "phase1-metric-variables",
+    "phase1-motion-variables"
+  ]
+}
