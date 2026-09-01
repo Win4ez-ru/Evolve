@@ -1,5 +1,7 @@
 # Evolve
 
+[![iOS CI](https://github.com/Win4ez-ru/Evolve/actions/workflows/ios.yml/badge.svg)](https://github.com/Win4ez-ru/Evolve/actions/workflows/ios.yml)
+
 Evolve is a native, local-first iOS prototype for intentional self-development
 scrolling. Its first product slice is **Focus Feed**: a finite, full-screen vertical
 feed for focus and discipline that turns short content into understanding, a
