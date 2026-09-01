@@ -21,6 +21,4 @@ jobs:
         run: xcodebuild -version
 
       - name: Build and test
-        env:
-          EVOLVE_DESTINATION: platform=iOS Simulator,name=iPhone 16 Pro
         run: ./Scripts/verify-release.sh
