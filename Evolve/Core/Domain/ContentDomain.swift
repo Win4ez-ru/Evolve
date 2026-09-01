@@ -330,9 +330,9 @@ enum EvidenceScorer {
         let weighted = evidence.map { sample -> (InteractionKind, Double) in
             let correctness: Double
             switch sample.isCorrect {
-            case true: correctness = 1
-            case false: correctness = 0.08
-            case nil: correctness = sample.confidence == .high ? 0.78 : sample.confidence == .medium ? 0.62 : 0.35
+            case .some(true): correctness = 1
+            case .some(false): correctness = 0.08
+            case .none: correctness = sample.confidence == .high ? 0.78 : sample.confidence == .medium ? 0.62 : 0.35
             }
 
             let confidence = 0.72 + (Double(sample.confidence.rawValue) * 0.09)
