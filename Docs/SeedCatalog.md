@@ -54,17 +54,17 @@ If persistence fails, the model context is rolled back. If bundle loading, migra
 
 ## Bundled sample
 
-`Evolve/Resources/Seed/ContentCatalog.v1.json` includes one material for each MVP category:
+`Evolve/Resources/Seed/ContentCatalog.v1.json` uses schema version 1 and catalog revision 2. It includes six materials across the MVP categories:
 
-- Philosophy: Reflect and Explain.
-- Productivity & Learning: Observe, Apply, and Track.
-- Programming Basics: Solve and Recall.
+- Philosophy: principle and concept materials.
+- Productivity & Learning: technique and dilemma materials.
+- Programming Basics: problem/code and worked-example materials.
 
 The content is an internal functional sample, not a production editorial release.
 
 ## Stage boundary
 
-Stage 4 does not render content, create the vertical session, execute interactions, calculate progress, schedule reviews, or connect a backend. Stage 5 builds the visual system and bounded learning-session shell on top of the installed catalog.
+Stage 4 owns the loading and migration contract. Stage 6 consumes the installed blocks through universal renderers; interaction execution, review scheduling, and backend sync remain later responsibilities.
 
 ## Verification
 

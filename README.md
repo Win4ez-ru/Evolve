@@ -1,37 +1,100 @@
 # Evolve
 
-Evolve is a native iOS product that turns short learning material into reflection, practice, delayed recall, and verified progress.
+Evolve is a native, local-first iOS prototype for intentional self-development
+scrolling. Its first product slice is **Focus Feed**: a finite, full-screen vertical
+feed for focus and discipline that turns short content into understanding, a
+thought, an action, or later recall.
 
-## Current scope
+## Current prototype
 
-This repository contains the completed foundations through **Stage 5 — Design System & Session Shell**:
+- Full-screen vertical paging with an explicit end-of-session summary instead of
+  an endless feed.
+- Duration-based plans for 5, 10, or 15 minutes, capped at 15 immutable session
+  items.
+- A balanced rhythm of four feed roles (`learn`, `test`, `reflect`, `do`) derived
+  from six editorial interaction patterns: learn, quiz, reflect, apply, track,
+  and recall. Due recall stays ahead of new discovery.
+- 12 original, bundled Focus & Discipline units across attention, starting, and
+  follow-through.
+- Code-native cards with text, choice, number, code, and reflection interactions;
+  objective checks provide immediate local feedback.
+- Feed controls for saving an idea, marking it useful, writing a private thought,
+  and opening its practice checkpoint.
+- A local Growth Memory that keeps saved ideas, thoughts, linked actions, attempts,
+  recall schedules, and learning state on the device.
+- Action lifecycle support, including pending, completed, and skipped states.
+- Local product events for impressions, fast skips, reversible usefulness,
+  feed endings, thoughts, actions, earned sessions, and completed Growth Loops.
+  Event payloads do not contain private thought text, and scrolling alone does
+  not earn mindful minutes or a streak.
+- Recall-first review, deterministic spaced repetition, remediation, and
+  evidence-weighted progress.
+- Onboarding and Profile settings for interests, goal, experience level, feed
+  duration, daily goal, and appearance. The initial local ranker prioritizes due
+  recall, the selected goal topic, learning state, and level fit.
+- SwiftData production, preview, and in-memory test stores, plus idempotent catalog
+  installation and personal-state preservation across catalog revisions.
+- Semantic SwiftUI design tokens, light and dark appearances, Dynamic Type, Reduce
+  Motion support, a privacy manifest, and an unsigned release verification flow.
 
-- SwiftUI application shell;
-- four root destinations;
-- Observation-based app environment;
-- SwiftData production, preview, and test containers;
-- semantic design tokens and reusable surfaces;
-- a UI-independent, versioned content schema;
-- categories, topics, content blocks, and interaction definitions;
-- editorial and personal knowledge lifecycle policies;
-- structured content validation;
-- a versioned three-category JSON catalog;
-- schema migration and explicit decoding errors;
-- idempotent SwiftData installation with downgrade protection;
-- preservation of personal state across catalog revisions;
-- a calm semantic design system for light and dark appearances;
-- a finite three-card Today plan and vertically paged learning session;
-- explicit session progress, stop confirmation, and terminal states;
-- accessibility layouts for the full Dynamic Type range and Reduce Motion;
-- Swift Testing coverage.
+The prototype requires no account, backend, Figma workflow, plugin, or paid
+third-party service. Real video delivery, remote catalogs, accounts and sync, open
+UGC and moderation, advertising, creator tools, and large-scale behavioral
+personalization remain future product stages.
 
-Content block rendering, the interaction engine, backend, social features, and AI are intentionally not implemented yet.
+See `Docs/ProductDefinition.md` for the product contract and guardrails.
+
+## Architecture
+
+Evolve is a native, local-first SwiftUI application. Product state is persisted with
+SwiftData, while deterministic services own catalog installation, session planning,
+interaction evaluation, recall scheduling, and progress evidence.
+
+```mermaid
+flowchart LR
+    UI[SwiftUI feature views] --> ENV[App environment]
+    ENV --> PLAN[Session planner and ranker]
+    ENV --> RENDER[Content renderer registry]
+    ENV --> STORE[Repositories]
+    PLAN --> STORE
+    RENDER --> STORE
+    STORE --> DB[(SwiftData)]
+    CATALOG[Versioned bundled catalog] --> INSTALL[Idempotent installer]
+    INSTALL --> DB
+```
+
+The bundled editorial catalog is versioned independently from personal state. Catalog
+upgrades are idempotent and preserve saved ideas, thoughts, actions, attempts, recall
+schedules, and learning evidence.
+
+See `Docs/Architecture.md`, `Docs/DomainModel.md`, and
+`Docs/LocalFirstLearningLoop.md` for the detailed boundaries.
+
+## How it works
+
+1. The planner prioritizes due recall, then scores new material against the selected
+   goal, experience level, and current learning state.
+2. A finite 5-, 10-, or 15-minute plan is frozen for the session; scrolling never
+   creates an endless feed.
+3. Typed content blocks resolve to code-native renderers and interaction evaluators.
+4. Objective checks, reflections, useful marks, thoughts, and actions update local
+   evidence.
+5. Deterministic scheduling turns that evidence into remediation, later recall, and
+   progress views.
+
+## Tech stack
+
+- Swift 6.3 and SwiftUI
+- SwiftData persistence with in-memory preview and test stores
+- Swift Observation and Swift Testing
+- WidgetKit and a privacy manifest
+- Xcode build tooling and GitHub Actions
 
 ## Requirements
 
-- Xcode 26.6 or newer;
-- Swift 6.3 toolchain;
-- iOS 18.0 deployment target.
+- Xcode 26.6 or newer
+- Swift 6.3 toolchain
+- iOS 18.0 deployment target
 
 ## Run
 
@@ -42,18 +105,40 @@ Content block rendering, the interaction engine, backend, social features, and A
 
 ## Verify
 
-Run the `Evolve` scheme tests in Xcode. The test target checks app foundations, domain validation, catalog migration and installation, lifecycle transitions, and in-memory SwiftData persistence.
+Run the code-first release gate from the repository root:
 
-The current Stage 5 build was verified on an iPhone 17 Pro simulator running iOS 26.5:
+```sh
+./Scripts/verify-release.sh
+```
 
-- application build succeeded;
-- all 24 tests passed;
-- the bundled catalog installed on first launch and remained idempotent;
-- catalog upgrades preserved personal knowledge records;
-- session planning never exceeds three cards and has deterministic stop and completion behavior;
-- Today and the session were reviewed in light, dark, and maximum accessibility Dynamic Type configurations;
-- the production target remains compatible with iOS 18.0 and newer.
+It runs the `Evolve` test target on an iPhone simulator and compiles an unsigned
+Release device build. Set `EVOLVE_DESTINATION` to select another installed
+simulator.
 
-## Architecture
+Current automated coverage contains 61 Swift Testing tests for domain validation,
+catalog decoding, migration and installation, persistence, rendering, finite
+session planning and state, review scheduling, evidence scoring, Growth Memory,
+action lifecycle, and local feed events.
 
-See `Docs/Architecture.md` for application boundaries, `Docs/DomainModel.md` for the universal schema, `Docs/SeedCatalog.md` for the Stage 4 loading and migration contract, and `Docs/DesignSystemAndSession.md` for the Stage 5 visual and session contracts.
+## Product and design workflow
+
+SwiftUI is the interface source of truth. Xcode Previews, simulator review, tests,
+and the release verification script are the critical path. Figma remains optional
+for a small number of high-value product or App Store compositions and cannot
+block implementation or launch.
+
+See `Docs/CodeFirstReleaseWorkflow.md` for visual QA and release checks, and
+`Docs/Architecture.md` for the current application boundaries.
+
+## TestFlight boundary
+
+The codebase can be built and tested without signing. A real TestFlight upload
+still requires a production bundle identifier, an Apple Developer team and signing
+configuration, and a matching App Store Connect application record and metadata.
+
+## Project status
+
+The Focus Feed learning loop is implemented and locally testable. Evolve is a
+portfolio prototype, not a released App Store product. Accounts, cloud sync, remote
+catalogs, open user-generated content, advertising, and large-scale personalization are
+explicitly outside the current scope.

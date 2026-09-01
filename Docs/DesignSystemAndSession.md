@@ -19,7 +19,9 @@ Colors are semantic and automatically adapt to light and dark appearances. Text 
 
 ## Session contract
 
-`LearningSessionPlan` is a value snapshot containing no more than three `LearningSessionItem` values. Each item includes only the metadata needed by the Stage 5 shell: identity, title, summary, category, kind, and estimated duration.
+`LearningSessionPlan` is a value snapshot containing no more than three
+`LearningSessionItem` values. Each item includes its identity, presentation
+metadata, ordered content blocks, source provenance, and executable interactions.
 
 `LearningSessionState` is the source of truth for:
 
@@ -33,7 +35,10 @@ The state type contains no SwiftUI dependencies, so its finite behavior is verif
 
 ## Navigation and accessibility
 
-Standard text sizes use vertical paging and one primary card per viewport. Accessibility Dynamic Type sizes use content-driven, view-aligned scrolling so long text remains reachable. The header and card metadata reflow at accessibility sizes rather than truncating essential content.
+Every step presents one primary card with a free, content-driven vertical scroll.
+The explicit action advances to the next card. The header and card metadata reflow
+at accessibility sizes so long content, prompts, inputs, and feedback remain
+reachable without truncation.
 
 Every session exposes:
 
@@ -43,10 +48,32 @@ Every session exposes:
 - action hints for advancing and completion;
 - Reduce Motion-aware transitions.
 
-## Stage 6 boundary
+## Stage 6 continuation
 
-The shell currently displays the catalog title and summary. It does not dispatch `ContentBlockDefinition` values, run interactions, score answers, write knowledge progress, or render specialized learning cards. Those responsibilities remain intentionally deferred to Stage 6.
+The shell delegates its content area to the universal renderer pipeline while
+retaining ownership of scrolling, progress, stop, interaction completion, and the
+terminal state. Renderer details and metadata policy are documented in
+`ContentRendering.md`.
 
-## Figma source
+## Code-first visual source
 
-The companion file is [Evolve — Stage 5 Learning Session](https://www.figma.com/design/2No881agwAOyT3Hx7UR6Pv). It contains primitive, light semantic, dark semantic, metric, and motion variable collections. Further component construction is paused by the Figma Starter MCP call limit and can resume without recreating the foundations.
+The SwiftUI design system and feature views are authoritative. Xcode Previews and
+simulator walkthroughs verify the actual product across appearance, Dynamic Type,
+and Reduce Motion. A Figma quota or unfinished Figma component never blocks a code
+change, TestFlight build, or App Store release.
+
+## Optional Figma reference
+
+The companion file is [Evolve — Stage 5 Learning Session](https://www.figma.com/design/2No881agwAOyT3Hx7UR6Pv). It currently contains:
+
+- five variable collections with 51 code-linked tokens;
+- seven SF Pro / SF Pro Rounded text styles that mirror `AppTypography`;
+- the `Elevation/Card` effect style from `AppElevation`;
+- a Starter-compatible three-page structure: Documentation, Components, and Product;
+- completed Cover, Getting Started, Colors, and Typography documentation sections.
+
+The file remains on Figma Starter and is intentionally paused as a reference. If a
+future product decision benefits from Figma, work is limited to onboarding, Today,
+the active session, session completion, and App Store compositions. There is no
+requirement to finish the remaining foundations or mirror every SwiftUI component.
+Exact existing node and style IDs remain stored in `FigmaStage5State.json`.

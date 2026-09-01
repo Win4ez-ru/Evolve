@@ -2,8 +2,19 @@
   "runId": "evolve-stage5-2026-07-22",
   "fileKey": "2No881agwAOyT3Hx7UR6Pv",
   "fileUrl": "https://www.figma.com/design/2No881agwAOyT3Hx7UR6Pv",
-  "phase": "phase1_blocked_rate_limit",
-  "step": "text-styles",
+  "phase": "deferred_code_first_reference",
+  "step": "on-demand-only",
+  "strategy": {
+    "sourceOfTruth": "SwiftUI",
+    "releaseDependency": false,
+    "allowedTargets": [
+      "Onboarding",
+      "Today",
+      "Active Focus Feed",
+      "Growth Loop ending",
+      "App Store screenshot composition"
+    ]
+  },
   "entities": {
     "collections": {
       "primitives": "VariableCollectionId:3:2",
@@ -22,24 +33,50 @@
       "radii": 4,
       "motionDurations": 4
     },
-    "styles": {},
-    "pages": {},
+    "styles": {
+      "screenTitle": "S:de30feb3fc38d3ddd9e0a10ea8eeeb4403720a2e,",
+      "sectionTitle": "S:052a9bd04907b0936404636e28202fe397a288ef,",
+      "cardTitle": "S:6b9f907b7b00942bbb873bc222010bb718afe58b,",
+      "body": "S:37b161ab7e0d1b7d4aa5372dcb1235eea38359aa,",
+      "supporting": "S:c31b4a3c2368308de60f06688bcaaa78456a3ba7,",
+      "caption": "S:74b07fbde949d4636026505fdb2a7a906e65fd68,",
+      "action": "S:54eccc84a3e767e41912b96415c9d8157f3dcf9e,",
+      "cardElevation": "S:bdf05abfa77c0e2986e82b8c709c7e5f7c258785,"
+    },
+    "pages": {
+      "documentation": "0:1",
+      "components": "10:2",
+      "product": "10:3"
+    },
+    "documentation": {
+      "cover": "10:4",
+      "gettingStarted": "12:2",
+      "foundations": "12:19",
+      "colors": "13:2",
+      "typography": "14:2"
+    },
     "components": {},
     "screens": {}
   },
   "pendingValidations": [
-    "Create SF Pro text styles",
-    "Create elevation effect style",
-    "Build documented foundations page",
-    "Build reusable session components",
-    "Build Stage 5 session screen and verify screenshots"
+    "Optional: update one of the four key product screens when it resolves a concrete design decision",
+    "Optional: compose final App Store screenshots from the shipping build"
   ],
-  "blocker": "Figma MCP Starter plan call limit reached while creating text styles",
+  "blocker": null,
   "completedSteps": [
     "phase0",
     "phase1-collections",
     "phase1-color-variables",
     "phase1-metric-variables",
-    "phase1-motion-variables"
+    "phase1-motion-variables",
+    "phase1-text-styles",
+    "phase1-effect-style",
+    "phase1-validation",
+    "phase2-starter-three-page-structure",
+    "phase2-cover",
+    "phase2-getting-started",
+    "phase2-colors-documentation",
+    "phase2-typography-documentation",
+    "strategy-code-first-release-2026-08-09"
   ]
 }
