@@ -7,7 +7,7 @@ struct PrimaryActionButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(AppTypography.action)
-            .foregroundStyle(Color.white)
+            .foregroundStyle(AppColor.onAccent)
             .frame(maxWidth: .infinity, minHeight: 52)
             .padding(.horizontal, AppSpacing.large)
             .background(background(configuration: configuration))

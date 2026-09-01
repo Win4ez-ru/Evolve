@@ -8,7 +8,12 @@ enum AppColor {
     static let textPrimary = Color.primary
     static let textSecondary = Color.secondary
     static let separator = Color(uiColor: .separator)
-    static let accent = Color(uiColor: .systemIndigo)
+    static let accent = Color.accentColor
+    static let onAccent = Color(uiColor: UIColor { traits in
+        traits.userInterfaceStyle == .dark ? .black : .white
+    })
+    static let heroActionBackground = Primitive.white
+    static let heroActionForeground = Primitive.indigoLight
     static let success = Color(uiColor: .systemGreen)
     static let danger = Color(uiColor: .systemRed)
 

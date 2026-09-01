@@ -10,7 +10,7 @@ final class AppInstallation {
     init(
         id: UUID = UUID(),
         createdAt: Date = .now,
-        schemaVersion: Int = 3
+        schemaVersion: Int = 5
     ) {
         self.id = id
         self.createdAt = createdAt

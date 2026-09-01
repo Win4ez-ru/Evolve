@@ -58,6 +58,13 @@ struct ContentCatalogInstaller {
             let units = try context.fetch(FetchDescriptor<ContentUnit>())
             let blocks = try context.fetch(FetchDescriptor<ContentBlock>())
             let interactions = try context.fetch(FetchDescriptor<InteractionDefinition>())
+            let learnerProfiles = try context.fetch(FetchDescriptor<LearnerProfile>())
+
+            let didRepairLearnerSelections = normalizeLearnerSelections(
+                learnerProfiles,
+                against: definition.categories,
+                at: installedAt
+            )
 
             let isComplete = hasExpectedIdentifiers(
                 definition: definition,
@@ -71,7 +78,8 @@ struct ContentCatalogInstaller {
             if let receipt,
                receipt.schemaVersion == definition.schemaVersion,
                receipt.catalogVersion == definition.catalogVersion,
-               isComplete {
+               isComplete,
+               !didRepairLearnerSelections {
                 return report(for: definition, outcome: .unchanged)
             }
 
@@ -110,6 +118,40 @@ struct ContentCatalogInstaller {
             context.rollback()
             throw ContentCatalogInstallationError.persistenceFailed(error.localizedDescription)
         }
+    }
+
+    /// Catalog revisions may replace editorial identifiers. Keep a completed
+    /// onboarding profile pointed at enabled categories so a stale selection
+    /// can never turn the Today feed into an empty screen after an update.
+    private func normalizeLearnerSelections(
+        _ profiles: [LearnerProfile],
+        against definitions: [ContentCategoryDefinition],
+        at date: Date
+    ) -> Bool {
+        let enabledDefinitions = definitions
+            .filter(\.isEnabled)
+            .sorted { $0.sortOrder < $1.sortOrder }
+        let enabledIDs = Set(enabledDefinitions.map(\.id))
+        guard let fallbackID = enabledDefinitions.first?.id else {
+            return false
+        }
+
+        var didChange = false
+        for profile in profiles where profile.completedOnboarding {
+            var seen: Set<UUID> = []
+            let validIDs = profile.selectedCategoryIDs.filter { id in
+                enabledIDs.contains(id) && seen.insert(id).inserted
+            }
+            let normalizedIDs = validIDs.isEmpty ? [fallbackID] : validIDs
+
+            guard normalizedIDs != profile.selectedCategoryIDs else {
+                continue
+            }
+            profile.selectedCategoryIDs = normalizedIDs
+            profile.updatedAt = date
+            didChange = true
+        }
+        return didChange
     }
 
     private func reconcileCategories(

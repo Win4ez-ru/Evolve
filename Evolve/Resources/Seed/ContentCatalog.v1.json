@@ -1,271 +1,615 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 1,
+  "catalogVersion": 3,
   "categories": [
     {
-      "id": "10000000-0000-4000-8000-000000000001",
-      "slug": "philosophy",
-      "name": "Philosophy",
-      "overview": "Ideas that sharpen judgment and support deliberate reflection.",
+      "id": "11000000-0000-4000-8000-000000000001",
+      "slug": "focus-discipline",
+      "name": "Focus & Discipline",
+      "overview": "Short practices for protecting attention, starting deliberately, and returning after disruption.",
       "sortOrder": 0,
-      "isEnabled": true
-    },
-    {
-      "id": "10000000-0000-4000-8000-000000000002",
-      "slug": "productivity-learning",
-      "name": "Productivity & Learning",
-      "overview": "Methods for learning intentionally and applying useful ideas.",
-      "sortOrder": 1,
-      "isEnabled": true
-    },
-    {
-      "id": "10000000-0000-4000-8000-000000000003",
-      "slug": "programming-basics",
-      "name": "Programming Basics",
-      "overview": "Foundational reasoning skills for reading and writing code.",
-      "sortOrder": 2,
       "isEnabled": true
     }
   ],
   "topics": [
     {
-      "id": "20000000-0000-4000-8000-000000000001",
-      "categoryID": "10000000-0000-4000-8000-000000000001",
-      "slug": "judgment-and-control",
-      "name": "Judgment & Control",
-      "overview": "Separating personal choices from external events."
+      "id": "21000000-0000-4000-8000-000000000001",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "slug": "attention-environment",
+      "name": "Attention & Environment",
+      "overview": "Make the chosen task easier to notice and distractions harder to reach."
     },
     {
-      "id": "20000000-0000-4000-8000-000000000002",
-      "categoryID": "10000000-0000-4000-8000-000000000002",
-      "slug": "active-learning",
-      "name": "Active Learning",
-      "overview": "Turning exposure into retrieval, observation, and action."
+      "id": "21000000-0000-4000-8000-000000000002",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "slug": "starting-momentum",
+      "name": "Starting & Momentum",
+      "overview": "Reduce the distance between an intention and the first visible action."
     },
     {
-      "id": "20000000-0000-4000-8000-000000000003",
-      "categoryID": "10000000-0000-4000-8000-000000000003",
-      "slug": "program-reasoning",
-      "name": "Program Reasoning",
-      "overview": "Predicting program behavior before running it."
+      "id": "21000000-0000-4000-8000-000000000003",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "slug": "consistency-recovery",
+      "name": "Consistency & Recovery",
+      "overview": "Build a repeatable return after missed plans, interruptions, and low-energy days."
     }
   ],
   "contentUnits": [
     {
-      "id": "30000000-0000-4000-8000-000000000001",
-      "slug": "control-boundary",
-      "title": "The boundary of control",
-      "summary": "A reflection on directing effort toward choices rather than outcomes.",
-      "kind": "principle",
+      "id": "31000000-0000-4000-8000-000000000001",
+      "slug": "give-attention-one-door",
+      "title": "Give attention one door",
+      "summary": "Name one target before work begins so every open option does not compete at once.",
+      "kind": "concept",
       "difficulty": 1,
       "editorialStatus": "published",
-      "categoryID": "10000000-0000-4000-8000-000000000001",
-      "topicIDs": [
-        "20000000-0000-4000-8000-000000000001"
-      ],
-      "estimatedMinutes": 4,
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000001"],
+      "estimatedMinutes": 1,
       "blocks": [
         {
-          "id": "40000000-0000-4000-8000-000000000001",
-          "kind": "paragraph",
+          "id": "41000000-0000-4000-8000-000000000001",
+          "kind": "heading",
           "order": 0,
-          "content": "Some outcomes depend on our choices; others also depend on circumstances and other people. Clear action starts by naming the difference."
+          "content": "One visible target"
         },
         {
-          "id": "40000000-0000-4000-8000-000000000002",
-          "kind": "callout",
+          "id": "41000000-0000-4000-8000-000000000002",
+          "kind": "paragraph",
           "order": 1,
-          "content": "The purpose is not passivity. It is to spend effort where a deliberate choice is still possible."
+          "content": "Before a focus block, write the single result you want to move. A clear target gives attention a place to return when another option appears."
         }
       ],
       "interactions": [
         {
-          "id": "50000000-0000-4000-8000-000000000001",
-          "kind": "reflect",
-          "responseKind": "text",
-          "evaluationKind": "self_assessment",
+          "id": "51000000-0000-4000-8000-000000000001",
+          "kind": "learn",
+          "responseKind": "none",
+          "evaluationKind": "completion",
           "order": 0,
-          "prompt": "Which part of a current situation is genuinely yours to choose?",
-          "estimatedMinutes": 2,
+          "prompt": "Pause and name the one result that deserves your next focus block.",
+          "estimatedMinutes": 1,
           "isPrimary": true,
-          "isRequired": true,
-          "requiresOwnResponseBeforeCommunity": false,
-          "options": []
-        },
-        {
-          "id": "50000000-0000-4000-8000-000000000002",
-          "kind": "explain",
-          "responseKind": "text",
-          "evaluationKind": "self_assessment",
-          "order": 1,
-          "prompt": "Explain the boundary of control in your own words.",
-          "estimatedMinutes": 2,
-          "isPrimary": false,
           "isRequired": false,
           "requiresOwnResponseBeforeCommunity": false,
           "options": []
         }
       ],
       "source": {
-        "title": "Stage 4 bundled sample",
+        "title": "Evolve Focus & Discipline Editorial Guide — Attention",
         "creator": "Evolve Editorial",
-        "license": "Internal sample — not production catalog content"
+        "license": "© 2026 Evolve. Original editorial content."
       },
-      "safety": {
-        "level": "standard",
-        "requiresExpertReview": false
-      }
+      "safety": {"level": "standard", "requiresExpertReview": false}
     },
     {
-      "id": "30000000-0000-4000-8000-000000000002",
-      "slug": "retrieve-before-rereading",
-      "title": "Retrieve before rereading",
-      "summary": "Use an unaided attempt to reveal what is actually available from memory.",
-      "kind": "technique",
-      "difficulty": 2,
+      "id": "31000000-0000-4000-8000-000000000002",
+      "slug": "protect-the-first-minute",
+      "title": "Protect the first minute",
+      "summary": "The first action can either settle attention or invite another round of switching.",
+      "kind": "question",
+      "difficulty": 1,
       "editorialStatus": "published",
-      "categoryID": "10000000-0000-4000-8000-000000000002",
-      "topicIDs": [
-        "20000000-0000-4000-8000-000000000002"
-      ],
-      "estimatedMinutes": 5,
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000001"],
+      "estimatedMinutes": 1,
       "blocks": [
         {
-          "id": "40000000-0000-4000-8000-000000000003",
+          "id": "41000000-0000-4000-8000-000000000003",
           "kind": "paragraph",
           "order": 0,
-          "content": "Before reopening notes, write down what you remember. The gaps in the attempt make the next review more focused."
+          "content": "You sit down to draft a proposal. Messages are visible, and the document is blank. Your first minute should reduce choice, not add more input."
         },
         {
-          "id": "40000000-0000-4000-8000-000000000004",
+          "id": "41000000-0000-4000-8000-000000000004",
           "kind": "callout",
           "order": 1,
-          "content": "A difficult attempt is useful evidence, not a failure signal."
+          "content": "A useful opening move is both relevant and immediately doable."
         }
       ],
       "interactions": [
         {
-          "id": "50000000-0000-4000-8000-000000000003",
-          "kind": "observe",
-          "responseKind": "text",
-          "evaluationKind": "completion",
-          "order": 0,
-          "prompt": "Notice when you reach for notes before attempting to remember.",
-          "estimatedMinutes": 1,
-          "isPrimary": true,
-          "isRequired": true,
-          "requiresOwnResponseBeforeCommunity": false,
-          "options": []
-        },
-        {
-          "id": "50000000-0000-4000-8000-000000000004",
-          "kind": "apply",
-          "responseKind": "text",
-          "evaluationKind": "completion",
-          "order": 1,
-          "prompt": "Choose one topic and schedule a two-minute retrieval attempt.",
-          "estimatedMinutes": 2,
-          "isPrimary": false,
-          "isRequired": false,
-          "requiresOwnResponseBeforeCommunity": false,
-          "options": []
-        },
-        {
-          "id": "50000000-0000-4000-8000-000000000005",
-          "kind": "track",
-          "responseKind": "measurement",
-          "evaluationKind": "completion",
-          "order": 2,
-          "prompt": "Record how many key points you recalled before reviewing.",
-          "estimatedMinutes": 1,
-          "isPrimary": false,
-          "isRequired": false,
-          "requiresOwnResponseBeforeCommunity": false,
-          "options": []
-        }
-      ],
-      "source": {
-        "title": "Stage 4 bundled sample",
-        "creator": "Evolve Editorial",
-        "license": "Internal sample — not production catalog content"
-      },
-      "safety": {
-        "level": "standard",
-        "requiresExpertReview": false
-      }
-    },
-    {
-      "id": "30000000-0000-4000-8000-000000000003",
-      "slug": "predict-reduce-result",
-      "title": "Predict the result",
-      "summary": "Trace a small reduction before asking the computer for the answer.",
-      "kind": "problem",
-      "difficulty": 2,
-      "editorialStatus": "published",
-      "categoryID": "10000000-0000-4000-8000-000000000003",
-      "topicIDs": [
-        "20000000-0000-4000-8000-000000000003"
-      ],
-      "estimatedMinutes": 4,
-      "blocks": [
-        {
-          "id": "40000000-0000-4000-8000-000000000005",
-          "kind": "code",
-          "order": 0,
-          "content": "let values = [2, 4, 6]\nlet total = values.reduce(0, +)\nprint(total)",
-          "language": "swift",
-          "accessibilityLabel": "Swift code that reduces the values two, four, and six into a total."
-        },
-        {
-          "id": "40000000-0000-4000-8000-000000000006",
-          "kind": "paragraph",
-          "order": 1,
-          "content": "Follow the accumulator after each element, then choose the printed value."
-        }
-      ],
-      "interactions": [
-        {
-          "id": "50000000-0000-4000-8000-000000000006",
-          "kind": "solve",
+          "id": "51000000-0000-4000-8000-000000000002",
+          "kind": "quiz",
           "responseKind": "single_choice",
           "evaluationKind": "choice",
           "order": 0,
-          "prompt": "What does the program print?",
-          "estimatedMinutes": 2,
+          "prompt": "Which first move best protects attention?",
+          "estimatedMinutes": 1,
           "isPrimary": true,
           "isRequired": true,
           "requiresOwnResponseBeforeCommunity": false,
           "options": [
-            "6",
-            "10",
-            "12",
-            "24"
+            "Check every message before starting",
+            "Silence alerts and write the proposal heading",
+            "Search for a better writing app",
+            "Open three reference articles"
           ],
-          "expectedResponse": "12"
+          "expectedResponse": "Silence alerts and write the proposal heading"
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Attention",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-000000000003",
+      "slug": "name-the-attention-leak",
+      "title": "Name the attention leak",
+      "summary": "A specific trigger is easier to redesign than a vague complaint about poor focus.",
+      "kind": "insight",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000001"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-000000000005",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "Instead of saying “I get distracted,” describe the moment: what you were doing, what appeared, and what you did next."
         },
         {
-          "id": "50000000-0000-4000-8000-000000000007",
+          "id": "41000000-0000-4000-8000-000000000006",
+          "kind": "callout",
+          "order": 1,
+          "content": "Precise observation turns self-criticism into a design problem."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-000000000003",
+          "kind": "reflect",
+          "responseKind": "text",
+          "evaluationKind": "self_assessment",
+          "order": 0,
+          "prompt": "What specific cue most often pulls you away from focused work?",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": []
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Attention",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-000000000004",
+      "slug": "add-one-friction-step",
+      "title": "Add one friction step",
+      "summary": "A tiny obstacle can interrupt an automatic distraction long enough for a deliberate choice.",
+      "kind": "technique",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000001"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-000000000007",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "Move the tempting app off the first screen, sign out after use, or place the phone beyond arm’s reach during one focus block."
+        },
+        {
+          "id": "41000000-0000-4000-8000-000000000008",
+          "kind": "callout",
+          "order": 1,
+          "content": "Choose one reversible change. The goal is a pause, not a perfect environment."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-000000000004",
+          "kind": "apply",
+          "responseKind": "text",
+          "evaluationKind": "completion",
+          "order": 0,
+          "prompt": "What one friction step will you add before your next focus block?",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": []
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Attention",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-000000000005",
+      "slug": "measure-the-start-delay",
+      "title": "Measure the start delay",
+      "summary": "Track the gap between the planned start and the first visible action without judging it.",
+      "kind": "experiment",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000002"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-000000000009",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "For one task, note when you intended to begin and when the first real action happened. Measurement reveals where a plan needs support."
+        },
+        {
+          "id": "41000000-0000-4000-8000-00000000000A",
+          "kind": "callout",
+          "order": 1,
+          "content": "The number is information, not a score of your character."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-000000000005",
+          "kind": "track",
+          "responseKind": "measurement",
+          "evaluationKind": "completion",
+          "order": 0,
+          "prompt": "Record the start delay in minutes for one task today.",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": []
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Starting",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-000000000006",
+      "slug": "recall-the-entry-step",
+      "title": "Recall the entry step",
+      "summary": "A task becomes easier to start when its first physical action is already defined.",
+      "kind": "recall_prompt",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000002"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-00000000000B",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "“Work on the report” still contains many decisions. “Open the draft and write one heading” gives the body an entry point."
+        },
+        {
+          "id": "41000000-0000-4000-8000-00000000000C",
+          "kind": "callout",
+          "order": 1,
+          "content": "The entry step should be visible, specific, and possible in about two minutes."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-000000000006",
           "kind": "recall",
           "responseKind": "text",
           "evaluationKind": "self_assessment",
+          "order": 0,
+          "prompt": "Without rereading, name the three qualities of a useful entry step.",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": []
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Starting",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-000000000007",
+      "slug": "shrink-the-opening-move",
+      "title": "Shrink the opening move",
+      "summary": "Discipline often begins by making the first commitment smaller than the resistance around it.",
+      "kind": "principle",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000002"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-00000000000D",
+          "kind": "heading",
+          "order": 0,
+          "content": "Start, then decide again"
+        },
+        {
+          "id": "41000000-0000-4000-8000-00000000000E",
+          "kind": "paragraph",
           "order": 1,
-          "prompt": "Without looking back, describe the two inputs a reduction needs.",
-          "estimatedMinutes": 2,
-          "isPrimary": false,
+          "content": "Commit to one tiny opening move instead of the whole task. Once movement exists, you can choose whether to continue with better information."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-000000000007",
+          "kind": "learn",
+          "responseKind": "none",
+          "evaluationKind": "completion",
+          "order": 0,
+          "prompt": "Choose a task and silently reduce it to one two-minute opening move.",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
           "isRequired": false,
           "requiresOwnResponseBeforeCommunity": false,
           "options": []
         }
       ],
       "source": {
-        "title": "Stage 4 bundled sample",
+        "title": "Evolve Focus & Discipline Editorial Guide — Starting",
         "creator": "Evolve Editorial",
-        "license": "Internal sample — not production catalog content"
+        "license": "© 2026 Evolve. Original editorial content."
       },
-      "safety": {
-        "level": "standard",
-        "requiresExpertReview": false
-      }
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-000000000008",
+      "slug": "choose-an-if-then-plan",
+      "title": "Choose an if-then plan",
+      "summary": "Connect a recognizable cue to a concrete first action instead of relying on a vague intention.",
+      "kind": "question",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000002"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-00000000000F",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "An if-then plan removes a decision from the moment of action: when the cue appears, the prepared opening move begins."
+        },
+        {
+          "id": "41000000-0000-4000-8000-000000000010",
+          "kind": "callout",
+          "order": 1,
+          "content": "Useful plans name both the cue and the behavior."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-000000000008",
+          "kind": "quiz",
+          "responseKind": "single_choice",
+          "evaluationKind": "choice",
+          "order": 0,
+          "prompt": "Which option is a complete if-then plan?",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": [
+            "I should focus more tomorrow",
+            "I will finish everything before lunch",
+            "If I sit down at 9:00, I will open the draft and write one heading",
+            "Important work deserves more motivation"
+          ],
+          "expectedResponse": "If I sit down at 9:00, I will open the draft and write one heading"
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Starting",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-000000000009",
+      "slug": "define-the-low-energy-version",
+      "title": "Define the low-energy version",
+      "summary": "A smaller version keeps the path visible when the ideal routine is unrealistic.",
+      "kind": "dilemma",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000003"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-000000000011",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "Your full routine may not fit every day. Decide in advance what still counts when time or energy is limited."
+        },
+        {
+          "id": "41000000-0000-4000-8000-000000000012",
+          "kind": "callout",
+          "order": 1,
+          "content": "The minimum should preserve identity and direction without pretending to equal the full practice."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-000000000009",
+          "kind": "reflect",
+          "responseKind": "text",
+          "evaluationKind": "self_assessment",
+          "order": 0,
+          "prompt": "What is the honest low-energy version of one routine you value?",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": []
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Consistency",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-00000000000A",
+      "slug": "use-the-next-slot-rule",
+      "title": "Use the next-slot rule",
+      "summary": "After a miss, replace an abstract promise with the next concrete opportunity to return.",
+      "kind": "technique",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000003"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-000000000013",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "When a planned session is missed, choose the next realistic time and opening move. Recovery becomes a scheduled behavior, not a mood."
+        },
+        {
+          "id": "41000000-0000-4000-8000-000000000014",
+          "kind": "callout",
+          "order": 1,
+          "content": "Do not redesign the whole system while disappointed. Secure the next return first."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-00000000000A",
+          "kind": "apply",
+          "responseKind": "text",
+          "evaluationKind": "completion",
+          "order": 0,
+          "prompt": "Write the next realistic time and first action for a routine you recently missed.",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": []
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Consistency",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-00000000000B",
+      "slug": "count-your-returns",
+      "title": "Count your returns",
+      "summary": "Recovery is a trainable behavior, so record returns instead of demanding a flawless streak.",
+      "kind": "experiment",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000003"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-000000000015",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "A broken streak hides an important success: beginning again. Count each deliberate return after an interruption or missed day."
+        },
+        {
+          "id": "41000000-0000-4000-8000-000000000016",
+          "kind": "callout",
+          "order": 1,
+          "content": "The measure rewards recovery without pretending interruptions do not matter."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-00000000000B",
+          "kind": "track",
+          "responseKind": "measurement",
+          "evaluationKind": "completion",
+          "order": 0,
+          "prompt": "How many deliberate returns have you made this week?",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": []
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Consistency",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
+    },
+    {
+      "id": "31000000-0000-4000-8000-00000000000C",
+      "slug": "recall-the-recovery-loop",
+      "title": "Recall the recovery loop",
+      "summary": "A simple sequence turns disruption into a practiced return rather than a verdict on discipline.",
+      "kind": "recall_prompt",
+      "difficulty": 1,
+      "editorialStatus": "published",
+      "categoryID": "11000000-0000-4000-8000-000000000001",
+      "topicIDs": ["21000000-0000-4000-8000-000000000003"],
+      "estimatedMinutes": 1,
+      "blocks": [
+        {
+          "id": "41000000-0000-4000-8000-000000000017",
+          "kind": "paragraph",
+          "order": 0,
+          "content": "Recovery has four moves: notice the break, reset one condition, take the smallest useful action, and record the return."
+        },
+        {
+          "id": "41000000-0000-4000-8000-000000000018",
+          "kind": "callout",
+          "order": 1,
+          "content": "The loop is complete when action resumes, not when guilt feels resolved."
+        }
+      ],
+      "interactions": [
+        {
+          "id": "51000000-0000-4000-8000-00000000000C",
+          "kind": "recall",
+          "responseKind": "text",
+          "evaluationKind": "self_assessment",
+          "order": 0,
+          "prompt": "Without looking back, reconstruct the four moves of the recovery loop.",
+          "estimatedMinutes": 1,
+          "isPrimary": true,
+          "isRequired": true,
+          "requiresOwnResponseBeforeCommunity": false,
+          "options": []
+        }
+      ],
+      "source": {
+        "title": "Evolve Focus & Discipline Editorial Guide — Consistency",
+        "creator": "Evolve Editorial",
+        "license": "© 2026 Evolve. Original editorial content."
+      },
+      "safety": {"level": "standard", "requiresExpertReview": false}
     }
   ]
 }

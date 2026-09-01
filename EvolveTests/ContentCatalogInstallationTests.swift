@@ -19,7 +19,7 @@ struct ContentCatalogInstallationTests {
         #expect(first.outcome == .installed)
         #expect(second.outcome == .unchanged)
         #expect(try context.fetchCount(FetchDescriptor<ContentCategory>()) == 3)
-        #expect(try context.fetchCount(FetchDescriptor<ContentUnit>()) == 3)
+        #expect(try context.fetchCount(FetchDescriptor<ContentUnit>()) == 6)
         #expect(try context.fetchCount(FetchDescriptor<ContentCatalogReceipt>()) == 1)
     }
 
@@ -38,9 +38,9 @@ struct ContentCatalogInstallationTests {
         let report = try bootstrapper.install(from: source, in: context)
 
         #expect(report.outcome == .repaired)
-        #expect(try context.fetchCount(FetchDescriptor<ContentUnit>()) == 3)
-        #expect(try context.fetchCount(FetchDescriptor<ContentBlock>()) == 6)
-        #expect(try context.fetchCount(FetchDescriptor<InteractionDefinition>()) == 7)
+        #expect(try context.fetchCount(FetchDescriptor<ContentUnit>()) == 6)
+        #expect(try context.fetchCount(FetchDescriptor<ContentBlock>()) == 14)
+        #expect(try context.fetchCount(FetchDescriptor<InteractionDefinition>()) == 10)
     }
 
     @Test("A newer catalog updates content and preserves personal state")
@@ -60,7 +60,7 @@ struct ContentCatalogInstallationTests {
         try context.save()
 
         let upgradedCatalog = makeCatalog(
-            version: 2,
+            version: 3,
             firstTitle: "The boundary of control — revised"
         )
         let report = try bootstrapper.install(
@@ -77,15 +77,57 @@ struct ContentCatalogInstallationTests {
         #expect(records.first?.isSaved == true)
     }
 
+    @Test("A catalog ID replacement keeps an onboarded learner in the feed")
+    func repairsStaleCategorySelection() throws {
+        let container = try PersistenceController.makeContainer(inMemory: true)
+        let context = ModelContext(container)
+        let bootstrapper = ContentCatalogBootstrapper()
+
+        _ = try bootstrapper.install(
+            from: try source(for: MVPContentFixtures.catalog),
+            in: context
+        )
+
+        let oldCategoryID = try #require(MVPContentFixtures.catalog.categories.first?.id)
+        let profile = LearnerProfile(
+            selectedCategoryIDs: [oldCategoryID],
+            learningGoal: .applyIdeas,
+            learnerLevel: .growing
+        )
+        context.insert(profile)
+        try context.save()
+
+        let bundledData = try BundleContentCatalogSource(bundle: .main).loadData()
+        let bundledCatalog = try ContentCatalogDecoder().decode(bundledData).definition
+        let upgradedSource = DataContentCatalogSource(
+            identifier: "test-catalog",
+            data: bundledData
+        )
+
+        let update = try bootstrapper.install(from: upgradedSource, in: context)
+        let newCategoryID = try #require(bundledCatalog.categories.first?.id)
+
+        #expect(update.outcome == .updated)
+        #expect(profile.selectedCategoryIDs == [newCategoryID])
+
+        profile.selectedCategoryIDs = [UUID()]
+        try context.save()
+
+        let repair = try bootstrapper.install(from: upgradedSource, in: context)
+
+        #expect(repair.outcome == .repaired)
+        #expect(profile.selectedCategoryIDs == [newCategoryID])
+    }
+
     @Test("A catalog downgrade is rejected without changing stored content")
     func rejectsDowngrade() throws {
         let container = try PersistenceController.makeContainer(inMemory: true)
         let context = ModelContext(container)
         let bootstrapper = ContentCatalogBootstrapper()
-        let versionTwo = makeCatalog(version: 2, firstTitle: "Revision two")
+        let versionThree = makeCatalog(version: 3, firstTitle: "Revision three")
 
         _ = try bootstrapper.install(
-            from: try source(for: versionTwo),
+            from: try source(for: versionThree),
             in: context
         )
 
@@ -96,13 +138,13 @@ struct ContentCatalogInstallationTests {
             )
             Issue.record("A catalog downgrade unexpectedly succeeded.")
         } catch let error as ContentCatalogInstallationError {
-            #expect(error == .catalogDowngrade(installed: 2, incoming: 1))
+            #expect(error == .catalogDowngrade(installed: 3, incoming: 2))
         } catch {
             Issue.record("Unexpected error: \(error)")
         }
 
         let units = try context.fetch(FetchDescriptor<ContentUnit>())
-        #expect(units.first { $0.id == MVPContentFixtures.philosophyUnit.id }?.title == "Revision two")
+        #expect(units.first { $0.id == MVPContentFixtures.philosophyUnit.id }?.title == "Revision three")
     }
 
     private func source(

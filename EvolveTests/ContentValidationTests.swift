@@ -9,7 +9,7 @@ struct ContentValidationTests {
         let catalog = try MVPContentFixtures.catalog.validated()
 
         #expect(catalog.categories.count == 3)
-        #expect(catalog.contentUnits.count == 3)
+        #expect(catalog.contentUnits.count == 6)
         #expect(Set(catalog.contentUnits.map(\.categoryID)).count == 3)
         #expect(catalog.contentUnits.allSatisfy { !$0.interactions.isEmpty })
     }

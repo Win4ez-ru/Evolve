@@ -13,7 +13,7 @@ enum AppTab: String, CaseIterable, Identifiable, Sendable {
         case .today:
             "Today"
         case .library:
-            "Library"
+            "Memory"
         case .progress:
             "Progress"
         case .profile:
@@ -26,7 +26,7 @@ enum AppTab: String, CaseIterable, Identifiable, Sendable {
         case .today:
             "sparkles"
         case .library:
-            "books.vertical"
+            "brain.head.profile"
         case .progress:
             "chart.line.uptrend.xyaxis"
         case .profile:

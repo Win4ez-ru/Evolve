@@ -1,3 +1,4 @@
+import Foundation
 import SwiftData
 
 @MainActor
@@ -23,5 +24,34 @@ enum PreviewSupport {
         } catch {
             fatalError("Unable to create preview container: \(error)")
         }
+    }
+
+    static func learningSessionPlan() -> LearningSessionPlan {
+        LearningSessionPlan(
+            items: [
+                LearningSessionItem(
+                    id: UUID(),
+                    title: "The boundary of control",
+                    summary: "A reflection on directing effort toward choices rather than outcomes.",
+                    categoryName: "Philosophy",
+                    kind: .principle,
+                    difficulty: .introductory,
+                    estimatedMinutes: 4,
+                    blocks: MVPContentFixtures.philosophyUnit.blocks,
+                    source: MVPContentFixtures.philosophyUnit.source
+                ),
+                LearningSessionItem(
+                    id: UUID(),
+                    title: "Retrieve before rereading",
+                    summary: "Use an unaided attempt to reveal what is available from memory.",
+                    categoryName: "Productivity & Learning",
+                    kind: .technique,
+                    difficulty: .foundational,
+                    estimatedMinutes: 5,
+                    blocks: MVPContentFixtures.productivityUnit.blocks,
+                    source: MVPContentFixtures.productivityUnit.source
+                )
+            ]
+        )
     }
 }

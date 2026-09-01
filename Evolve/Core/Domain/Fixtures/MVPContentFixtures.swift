@@ -11,7 +11,7 @@ enum MVPContentFixtures {
 
     static let catalog = ContentCatalogDefinition(
         schemaVersion: 1,
-        catalogVersion: 1,
+        catalogVersion: 2,
         categories: [
             ContentCategoryDefinition(
                 id: philosophyCategoryID,
@@ -61,7 +61,10 @@ enum MVPContentFixtures {
         contentUnits: [
             philosophyUnit,
             productivityUnit,
-            programmingUnit
+            programmingUnit,
+            conceptUnit,
+            dilemmaUnit,
+            workedExampleUnit
         ]
     )
 
@@ -228,8 +231,145 @@ enum MVPContentFixtures {
         source: fixtureSource
     )
 
+    static let conceptUnit = ContentUnitDefinition(
+        id: id("30000000-0000-4000-8000-000000000004"),
+        slug: "models-compress-reality",
+        title: "A model is a useful compression",
+        summary: "Treat a model as a deliberate simplification, not as reality itself.",
+        kind: .concept,
+        difficulty: .foundational,
+        editorialStatus: .published,
+        categoryID: philosophyCategoryID,
+        topicIDs: [philosophyTopicID],
+        estimatedMinutes: 4,
+        blocks: [
+            ContentBlockSpec(
+                id: id("40000000-0000-4000-8000-000000000007"),
+                kind: .heading,
+                order: 0,
+                content: "Map, not territory"
+            ),
+            ContentBlockSpec(
+                id: id("40000000-0000-4000-8000-000000000008"),
+                kind: .paragraph,
+                order: 1,
+                content: "A useful model keeps the distinctions needed for a decision and leaves other details out."
+            ),
+            ContentBlockSpec(
+                id: id("40000000-0000-4000-8000-000000000009"),
+                kind: .quote,
+                order: 2,
+                content: "Ask what the model highlights, what it hides, and whether that tradeoff fits the decision."
+            )
+        ],
+        interactions: [
+            InteractionSpec(
+                id: id("50000000-0000-4000-8000-000000000008"),
+                kind: .explain,
+                responseKind: .text,
+                evaluationKind: .selfAssessment,
+                order: 0,
+                prompt: "Name one detail a familiar model intentionally leaves out.",
+                estimatedMinutes: 2,
+                isPrimary: true,
+                isRequired: true
+            )
+        ],
+        source: fixtureSource
+    )
+
+    static let dilemmaUnit = ContentUnitDefinition(
+        id: id("30000000-0000-4000-8000-000000000005"),
+        slug: "optimize-speed-or-confidence",
+        title: "Choose what to optimize",
+        summary: "A practical dilemma between acting quickly and reducing uncertainty.",
+        kind: .dilemma,
+        difficulty: .intermediate,
+        editorialStatus: .published,
+        categoryID: productivityCategoryID,
+        topicIDs: [productivityTopicID],
+        estimatedMinutes: 4,
+        blocks: [
+            ContentBlockSpec(
+                id: id("40000000-0000-4000-8000-000000000010"),
+                kind: .paragraph,
+                order: 0,
+                content: "Waiting can improve confidence, while acting now can preserve momentum and reveal new evidence."
+            ),
+            ContentBlockSpec(
+                id: id("40000000-0000-4000-8000-000000000011"),
+                kind: .callout,
+                order: 1,
+                content: "The useful question is not which side is always right, but which error is easier to reverse here."
+            )
+        ],
+        interactions: [
+            InteractionSpec(
+                id: id("50000000-0000-4000-8000-000000000009"),
+                kind: .reflect,
+                responseKind: .text,
+                evaluationKind: .selfAssessment,
+                order: 0,
+                prompt: "Which error is more reversible in a decision you face now?",
+                estimatedMinutes: 2,
+                isPrimary: true,
+                isRequired: true
+            )
+        ],
+        source: fixtureSource
+    )
+
+    static let workedExampleUnit = ContentUnitDefinition(
+        id: id("30000000-0000-4000-8000-000000000006"),
+        slug: "percentage-change-example",
+        title: "Work through a percentage change",
+        summary: "Follow a small calculation from the starting value to the result.",
+        kind: .workedExample,
+        difficulty: .introductory,
+        editorialStatus: .published,
+        categoryID: programmingCategoryID,
+        topicIDs: [programmingTopicID],
+        estimatedMinutes: 4,
+        blocks: [
+            ContentBlockSpec(
+                id: id("40000000-0000-4000-8000-000000000012"),
+                kind: .paragraph,
+                order: 0,
+                content: "Start with 80 and express a ten-percent increase as the multiplier 1.10."
+            ),
+            ContentBlockSpec(
+                id: id("40000000-0000-4000-8000-000000000013"),
+                kind: .formula,
+                order: 1,
+                content: "80 × 1.10 = 88",
+                accessibilityLabel: "Eighty multiplied by one point one equals eighty-eight."
+            ),
+            ContentBlockSpec(
+                id: id("40000000-0000-4000-8000-000000000014"),
+                kind: .callout,
+                order: 2,
+                content: "Check the direction: an increase should produce a result larger than the starting value."
+            )
+        ],
+        interactions: [
+            InteractionSpec(
+                id: id("50000000-0000-4000-8000-000000000010"),
+                kind: .solve,
+                responseKind: .number,
+                evaluationKind: .exactMatch,
+                order: 0,
+                prompt: "What is ten percent of 80?",
+                estimatedMinutes: 1,
+                isPrimary: true,
+                isRequired: true,
+                expectedResponse: "8"
+            )
+        ],
+        source: fixtureSource
+    )
+
     private static let fixtureSource = ContentSource(
-        title: "Stage 3 model fixture",
+        title: "Stage 6 renderer fixture",
         creator: "Evolve Editorial",
         license: "Internal sample — not production catalog content"
     )

@@ -10,9 +10,13 @@ struct ContentCatalogDecodingTests {
         let loaded = try ContentCatalogDecoder().decode(data)
 
         #expect(loaded.definition.schemaVersion == 1)
-        #expect(loaded.definition.catalogVersion == 1)
-        #expect(loaded.definition.categories.count == 3)
-        #expect(loaded.definition.contentUnits.count == 3)
+        #expect(loaded.definition.catalogVersion == 3)
+        #expect(loaded.definition.categories.count == 1)
+        #expect(loaded.definition.topics.count == 3)
+        #expect(loaded.definition.contentUnits.count == 12)
+        #expect(loaded.definition.categories.first?.slug == "focus-discipline")
+        #expect(loaded.definition.contentUnits.allSatisfy { $0.estimatedMinutes == 1 })
+        #expect(loaded.definition.contentUnits.allSatisfy { $0.editorialStatus == .published })
         #expect(!loaded.didMigrate)
     }
 
